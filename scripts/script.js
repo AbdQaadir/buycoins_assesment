@@ -2,16 +2,14 @@ import {getMonth} from './util.js';
 const handleDate = date => {
     const month = getMonth(new Date(date).getMonth());
     const day = new Date(date).getDay();
-
-
     return `${month} ${day}`;
 }
-const token = ""
+
 fetch('https://api.github.com/graphql',  {
     method: "POST",
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'bearer ' + token
+        'Authorization': 'bearer 2ed95212cdd1bc6f9794bc64a4b23dbb85fe0ba2'
     },
     body: JSON.stringify({
         query: `
