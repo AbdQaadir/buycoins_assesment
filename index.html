@@ -9,8 +9,9 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <!-- Local CSS -->
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet"  href="./styles/style.css">
     <title>BuyCoins Assesment</title>
+    <script src="./scripts/script.js" type="module" defer></script>
 </head>
 <body>
     <header>
@@ -29,9 +30,9 @@
                 </ul>
             </div>   
             <div class="nav__sectionC">
-                <a href="/"><i class="far fa-bell"></i></a>
-                <span>+ <i class="fas sort-down"></i></span>
-                <span>+ <i class="fas sort-down"></i></span>
+                <span><a href="/"><i class="far fa-bell"></i></a></span>
+                <span><i class="fas fa-sort-down"></i>+</span>
+                <span><img class="profile-picture" src="" alt=""> <i class="fas fa-sort-down"></i></span>
             </div>
         </nav>
     </header>
@@ -40,30 +41,21 @@
         <div class="main__row">
             <div class="main__sectionA">
                 <div class="image__wrapper">
-                    <img src="https://avatars1.githubusercontent.com/u/40659739?s=460&u=1cd6278210d8948bcdda4edc8d14aaa0f35e8b38&v=4" alt="Profile Picture" class="profile-picture">
+                    <img src="" alt="Profile Picture" class="profile-picture">
                     <span class="profile__emoji"><i class="far fa-smile"></i></span>
                 </div>
-                <h2>Lateef Quadri Olayinka</h2>
-                <p>AbdQaadir</p>
-                <p>Frontend Developer and User Interface Designer</p>
+                <h2 class="user">Lateef Quadri Olayinka</h2>
+                <p class="username">AbdQaadir</p>
+                <p class="bio">Frontend Developer and User Interface Designer</p>
             </div>
             <div class="main__sectionB">
                 <input type="text" placeholder="Find a repository">
                 <hr>
-                <p><strong>124</strong> results for public repositories</p>
+                <p><span class="count">0</span> results for public repositories</p>
                 <hr>
-                <div class="repo-item">
-                    <div>
-                        <a href="/">ireadenirokun.com</a>
-                        <p class="repo-description">This is the repo for the assignment 2 of Internship JS Technical Assessment</p>
-                        <div class="repo-details">
-                            <span><i class="fas fa-circle"></i>HTML</span>
-                            <span><i class="far fa-star"></i>22</span>
-                            <span><i class="fas fa-code-branch"></i> 22</span>
-                        </div>
-                    </div>
-                    <button class="star-btn"><i class="far fa-star"></i> Star</button>
+                <div class="repositories">
                 </div>
+                
             </div>
         </div>
     </main>
