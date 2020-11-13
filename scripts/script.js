@@ -6,12 +6,12 @@ const handleDate = date => {
 
     return `${month} ${day}`;
 }
-
+const token = ""
 fetch('https://api.github.com/graphql',  {
     method: "POST",
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'bearer ' + "319ffc304b35fd5c5d7e81182497c113f16fd261"
+        'Authorization': 'bearer ' + token
     },
     body: JSON.stringify({
         query: `
