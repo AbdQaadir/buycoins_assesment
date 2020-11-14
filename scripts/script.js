@@ -4,12 +4,13 @@ const handleDate = date => {
     const day = new Date(date).getDay();
     return `${month} ${day}`;
 }
-
+const token = '668538e9ad9e727e4bbd9c580761f1375c8ba6c3.';
+console.log(token.replace('/', ''))
 fetch('https://api.github.com/graphql',  {
     method: "POST",
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'bearer 2ed95212cdd1bc6f9794bc64a4b23dbb85fe0ba2'
+        'Authorization': `bearer ${token.replace('.', '')}`
     },
     body: JSON.stringify({
         query: `
