@@ -43,6 +43,9 @@ fetch('https://api.github.com/graphql',  {
                         forks {
                           totalCount
                         }
+                        primaryLanguage {
+                            name
+                          }
                       }
                   }
                 }
@@ -59,17 +62,18 @@ fetch('https://api.github.com/graphql',  {
         document.getElementsByClassName("bio")[0].textContent = bio;
         document.getElementsByClassName("count")[0].textContent = repositories.nodes.length;
 
-        repositories.nodes.forEach(repo => {
+        repositories.nodes.forEach((repo) => {
+            const {name, url, description, forks, updatedAt, primaryLanguage } = repo;
             document.getElementsByClassName("repositories")[0]. innerHTML += `
             <div class="repo-item">
                 <div class="repo-side1">
-                    <a href="${repo.url}">${repo.name}</a>
-                    <p class="repo-description">${repo.description || ""}</p>
+                    <a href="${url}">${name}</a>
+                    <p class="repo-description">${description || ""}</p>
                     <div class="repo-details">
-                        <span><i class="fas fa-circle"></i>HTML</span>
+                        <span><i class="fas fa-circle ${primaryLanguage?.name === "HTML" ? "text-danger" : primaryLanguage?.name === "JavaScript" ? "text-warning" : "" }"></i>${primaryLanguage?.name || ""}</span>
                         <span><i class="far fa-star"></i>22</span>
-                        <span><i class="fas fa-code-branch"></i> ${repo.forks.totalCount}</span>
-                        <span>Update on ${handleDate(repo.updatedAt)}</span>
+                        <span><i class="fas fa-code-branch"></i> ${forks.totalCount}</span>
+                        <span>Update on ${handleDate(updatedAt)}</span>
                     </div>
                 </div>
                 <button class="star-btn"><i class="far fa-star"></i> Star</button>

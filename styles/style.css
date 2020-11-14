@@ -12,6 +12,12 @@ body {
 hr {
   border: 1px solid rgba(0, 0, 0, 0.09);
 }
+i.fas.text-danger {
+  color: red;
+}
+i.fas.text-warning {
+  color: yellow;
+}
 header {
   background-color: #000;
   color: #fff;
@@ -181,14 +187,18 @@ h2.user {
   font-size: 20px;
   font-weight: 700;
   text-decoration: none;
-  color: blue;
+  color: #0366d6;
   width: 100%;
+}
+.repo-item a:hover {
+  text-decoration: underline;
 }
 .repo-details {
   margin-top: 30px;
 }
 .repo-details i {
   padding: 0 4px;
+  color: black;
 }
 .repo-details span {
   padding-right: 20px;
