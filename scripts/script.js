@@ -15,21 +15,7 @@ const handleDate = date => {
     return `${month} ${day}`;
 }
 
-// Hanlde Primary Language Color
-// const handleColor = lang => {
-//     switch(lang){
-//         case "HTML":
-//             return "red";
-//         case "CSS":
-//             return "purple";
-//         case "JavaScript":
-//             return "yellow"
-//         case "TypeScript":
-//             return "blue"
-//         default:
-//             return "black";
-//     }
-// }
+
 // Token for GraphQL API call, tampered with it because if github detects it, it will be automatically removed
 // The add "<" would be removed in the header of the fetch api
 const token = '<1<1<c<7<e<c<8<1<f<9<5<9<5<3<8<6<9<0<5<9<7<8<5<e<2<1<1<e<e<5<9<d<5<7<f<6<d<2<1<8<';
