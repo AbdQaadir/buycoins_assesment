@@ -15,6 +15,21 @@ const handleDate = date => {
     return `${month} ${day}`;
 }
 
+// Hanlde Primary Language Color
+// const handleColor = lang => {
+//     switch(lang){
+//         case "HTML":
+//             return "red";
+//         case "CSS":
+//             return "purple";
+//         case "JavaScript":
+//             return "yellow"
+//         case "TypeScript":
+//             return "blue"
+//         default:
+//             return "black";
+//     }
+// }
 // Token for GraphQL API call, tampered with it because if github detects it, it will be automatically removed
 // The add "<" would be removed in the header of the fetch api
 const token = '<1<1<c<7<e<c<8<1<f<9<5<9<5<3<8<6<9<0<5<9<7<8<5<e<2<1<1<e<e<5<9<d<5<7<f<6<d<2<1<8<';
@@ -64,16 +79,17 @@ fetch('https://api.github.com/graphql',  {
 
         repositories.nodes.forEach((repo) => {
             const {name, url, description, forks, updatedAt, primaryLanguage } = repo;
+            const lang = primaryLanguage?.name;
             document.getElementsByClassName("repositories")[0]. innerHTML += `
             <div class="repo-item">
                 <div class="repo-side1">
                     <a href="${url}">${name}</a>
                     <p class="repo-description">${description || ""}</p>
                     <div class="repo-details">
-                        <span><i class="fas fa-circle ${primaryLanguage?.name === "HTML" ? "text-danger" : primaryLanguage?.name === "JavaScript" ? "text-warning" : "" }"></i>${primaryLanguage?.name || ""}</span>
+                        <span><i class="fas fa-circle ${lang === "HTML" ? "red" : lang === "JavaScript" ? "yellow" : lang === "CSS" ? "purple" : "blue"  }"></i>${lang || ""}</span>
                         <span><i class="far fa-star"></i>22</span>
                         <span><i class="fas fa-code-branch"></i> ${forks.totalCount}</span>
-                        <span>Update on ${handleDate(updatedAt)}</span>
+                        <span>Updated on ${handleDate(updatedAt)}</span>
                     </div>
                 </div>
                 <button class="star-btn"><i class="far fa-star"></i> Star</button>

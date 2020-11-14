@@ -12,11 +12,17 @@ body {
 hr {
   border: 1px solid rgba(0, 0, 0, 0.09);
 }
-i.fas.text-danger {
+i.fas.red {
   color: red;
 }
-i.fas.text-warning {
+i.fas.yellow {
   color: yellow;
+}
+i.fas.purple {
+  color: #563d7c;
+}
+i.fas.blue {
+  color: #2b7489;
 }
 header {
   background-color: #000;
@@ -335,8 +341,8 @@ i.notification-icon::after {
     padding: 0 4px;
   }
   .repo-details span {
-    padding-right: 20px;
-    font-size: 10px;
+    padding-right: 12px;
+    font-size: 11px;
   }
   .star-btn {
     height: 30px;
