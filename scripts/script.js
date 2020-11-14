@@ -1,16 +1,22 @@
 import {getMonth} from './util.js';
+const toggleBtn = document.querySelector(".toggle-btn");
+const mobileNav = document.querySelector(".mobile-dropdown");
+
+
+toggleBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle("active");
+})
 const handleDate = date => {
     const month = getMonth(new Date(date).getMonth());
     const day = new Date(date).getDay();
     return `${month} ${day}`;
 }
-const token = '668538e9ad9e727e4bbd9c580761f1375c8ba6c3.';
-console.log(token.replace('/', ''))
+const token = '<1<1<c<7<e<c<8<1<f<9<5<9<5<3<8<6<9<0<5<9<7<8<5<e<2<1<1<e<e<5<9<d<5<7<f<6<d<2<1<8<';
 fetch('https://api.github.com/graphql',  {
     method: "POST",
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': `bearer ${token.replace('.', '')}`
+        'Authorization': `bearer ${token.replace(/</g, "")}`
     },
     body: JSON.stringify({
         query: `
@@ -38,9 +44,8 @@ fetch('https://api.github.com/graphql',  {
 }).then(res=> res.json())
     .then(data => {
         const {avatarUrl, bio, login, name, repositories} = data.data.viewer;
-        console.log(data)
-        document.getElementsByClassName("profile-picture")[0].setAttribute("src", avatarUrl);
-        document.getElementsByClassName("profile-picture")[1].setAttribute("src", avatarUrl);
+        console.log(data);
+        document.querySelectorAll(".profile-picture").forEach((img) => img.setAttribute("src", avatarUrl))
         document.getElementsByClassName("user")[0].textContent = name;
         document.getElementsByClassName("username")[0].textContent = login;
         document.getElementsByClassName("bio")[0].textContent = bio;
@@ -49,9 +54,9 @@ fetch('https://api.github.com/graphql',  {
         repositories.nodes.forEach(repo => {
             document.getElementsByClassName("repositories")[0]. innerHTML += `
             <div class="repo-item">
-                <div>
+                <div class="repo-side1">
                     <a href="${repo.url}">${repo.name}</a>
-                    <p class="repo-description">${repo.description}</p>
+                    <p class="repo-description">${repo.description || ""}</p>
                     <div class="repo-details">
                         <span><i class="fas fa-circle"></i>HTML</span>
                         <span><i class="far fa-star"></i>22</span>

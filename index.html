@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>
-        <nav id="nav">
+        <nav id="desktop-nav">
             <a href="/" class="nav__brand">
                 <i class="fab fa-github"></i>
             </a>
@@ -30,30 +30,73 @@
                 </ul>
             </div>   
             <div class="nav__sectionC">
-                <span><a href="/"><i class="far fa-bell"></i></a></span>
+                <span><a href="/"><i class="far fa-bell notification-icon"></i></a></span>
                 <span><i class="fas fa-sort-down"></i>+</span>
                 <span><img class="profile-picture" src="" alt=""> <i class="fas fa-sort-down"></i></span>
+            </div>
+        </nav>
+        <nav id="mobile-nav">
+            <div class="mobile-mainNav">
+                <button class="toggle-btn"><i class="fas fa-bars"></i></button>
+                <a href="/" class="nav__brand">
+                    <i class="fab fa-github"></i>
+                </a>
+                <span><a href="/"><i class="far fa-bell notification-icon"></i></a></span>
+            </div>
+            
+            <div class="mobile-dropdown">
+                    <input type="text" class="nav__search" placeholder="Search or jump to...">
+                    <ul class="">
+                        <li><a href="/">Dashboard</a></li>
+                        <li><a href="/">Pull Requests</a></li>
+                        <li><a href="/">Issues</a></li>
+                        <li><a href="/">Codespaces</a></li>
+                        <li><a href="/">Marketplace</a></li>
+                        <li><a href="/">Explore</a></li>
+                        <li><a href="/"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>
+                    </ul>
             </div>
         </nav>
     </header>
 
     <main>
+        <div class="tab-row">
+            <div class="tab-wrapper">
+                <ul>
+                    <li><img src="./images/book-1.svg" alt=""> Overview</li>
+                    <li class="active"><img src="./images/book.svg" alt=""> Repositories</li>
+                    <li><img src="./images/package.svg" alt=""> Projects</li>
+                    <li><img src="./images/cube.svg" alt=""> Packages</li>
+                </ul>
+            </div>
+        </div>
         <div class="main__row">
             <div class="main__sectionA">
                 <div class="image__wrapper">
                     <img src="" alt="Profile Picture" class="profile-picture">
                     <span class="profile__emoji"><i class="far fa-smile"></i></span>
                 </div>
-                <h2 class="user">Lateef Quadri Olayinka</h2>
-                <p class="username">AbdQaadir</p>
-                <p class="bio">Frontend Developer and User Interface Designer</p>
+               <div>
+                <h2 class="user"></h2>
+                <p class="username"></p>
+                <p class="bio"></p>
+               </div>
             </div>
             <div class="main__sectionB">
-                <input type="text" placeholder="Find a repository">
+                <div class="mobile-tab-row">
+                        <ul>
+                            <li><img src="./images/book-1.svg" alt=""> Overview</li>
+                            <li class="active"><img src="./images/book.svg" alt=""> Repositories</li>
+                            <li><img src="./images/package.svg" alt=""> Projects</li>
+                            <li><img src="./images/cube.svg" alt=""> Packages</li>
+                        </ul>
+                </div>
+                <!-- <input type="text" placeholder="Find a repository"> -->
                 <hr>
                 <p><span class="count">0</span> results for public repositories</p>
                 <hr>
                 <div class="repositories">
+
                 </div>
                 
             </div>
