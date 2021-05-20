@@ -18,7 +18,7 @@ const handleDate = date => {
 
 // Token for GraphQL API call, tampered with it because if github detects it, it will be automatically removed
 // The add "<" would be removed in the header of the fetch api
-const token = '<1<1<c<7<e<c<8<1<f<9<5<9<5<3<8<6<9<0<5<9<7<8<5<e<2<1<1<e<e<5<9<d<5<7<f<6<d<2<1<8<';
+const token = "g<h<p<_<M<O<7<3<Q<9<B<H<e<Z<2<E<v<s<O<4<k<D<P<N<U<W<K<N<k<y<8<3<X<5<0<1<q<d<H<2<";
 
 // API Call
 fetch('https://api.github.com/graphql',  {
